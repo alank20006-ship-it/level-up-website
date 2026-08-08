@@ -1,44 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#020617">
-<title>LEVEL UP — System Fitness</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050816">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Level Up Fitness</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="login" class="login-screen">
-  <div class="login-card glow">
-    <div class="logo">ϟ</div>
-    <h1>LEVEL UP</h1>
-    <p class="green">CREATOR CODE LOCKED</p>
-    <p class="muted">Enter the system and begin your transformation.</p>
-    <input id="nameInput" placeholder="Hunter name" maxlength="24">
-    <button class="primary" onclick="login()">ENTER SYSTEM</button>
-  </div>
-</div>
 
-<div id="app" class="hidden">
-  <header class="topbar">
-    <div class="brand"><span class="mini-logo">ϟ</span><div><b>LEVEL UP</b><small>CREATOR CODE LOCKED</small></div></div>
-    <div class="top-actions"><span id="timer" class="timer">00:00</span><button class="icon-btn" onclick="logout()">↪</button></div>
-  </header>
+  <!-- LOGIN -->
+  <section id="login" class="login-screen">
+    <div class="login-card">
+      <div class="logo">⚡</div>
+      <div class="green">SYSTEM ONLINE</div>
+      <h1>LEVEL UP</h1>
+      <p class="muted">Build strength. Complete quests. Transform your body.</p>
+      <input id="nameInput" type="text" maxlength="24" placeholder="Enter your Hunter name">
+      <button class="primary" onclick="login()">ENTER THE SYSTEM</button>
+    </div>
+  </section>
 
-  <main id="content"></main>
+  <!-- APP -->
+  <main id="app" class="hidden">
+    <header class="topbar">
+      <div class="brand">
+        <div class="mini-logo">⚡</div>
+        <div>
+          <b>LEVEL UP</b>
+          <small>FITNESS SYSTEM</small>
+        </div>
+      </div>
 
-  <nav class="bottom-nav">
-    <button onclick="showTab(0)" data-tab="0"><span>◈</span>System</button>
-    <button onclick="showTab(1)" data-tab="1"><span>☑</span>Quests</button>
-    <button onclick="showTab(2)" data-tab="2"><span>◉</span>Phase</button>
-    <button onclick="showTab(3)" data-tab="3"><span>♜</span>Forge</button>
-    <button onclick="showTab(4)" data-tab="4"><span>✦</span>Oracle</button>
-    <button onclick="showTab(5)" data-tab="5"><span>♛</span>Badges</button>
-  </nav>
-</div>
-<script src="sounds.js"></script>
-<script src="app.js"></script>
+      <div class="top-actions">
+        <span id="timer" class="timer">00:00</span>
+        <button class="icon-btn" onclick="logout()" aria-label="Logout">↪</button>
+      </div>
+    </header>
+
+    <section id="content"></section>
+
+    <nav class="bottom-nav">
+      <button data-tab="0" onclick="showTab(0)">
+        <span>⌂</span>Home
+      </button>
+      <button data-tab="1" onclick="showTab(1)">
+        <span>✓</span>Quests
+      </button>
+      <button data-tab="2" onclick="showTab(2)">
+        <span>◈</span>Phase
+      </button>
+      <button data-tab="3" onclick="showTab(3)">
+        <span>⚔</span>Forge
+      </button>
+      <button data-tab="4" onclick="showTab(4)">
+        <span>◉</span>Oracle
+      </button>
+      <button data-tab="5" onclick="showTab(5)">
+        <span>🏆</span>Badges
+      </button>
+    </nav>
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
